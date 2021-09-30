@@ -5,7 +5,10 @@
     "lerna": "^4.0.0"
   },
   "scripts": {
-    "build": "lerna run build",
+    "test": "lerna run test --stream",
+    "build": "lerna run build --stream",
+    "lint": "lerna run lint",
+    "format": "lerna run format",
     "publish": "lerna publish",
     "bootstrap": "lerna bootstrap --hoist",
     "lerna": "lerna"
