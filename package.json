@@ -11,6 +11,7 @@
     "lint": "lerna run lint",
     "format": "lerna run format",
     "publish": "lerna publish",
+    "prepare": "lerna run prepublishOnly",
     "bootstrap": "lerna bootstrap",
     "lerna": "lerna"
   }

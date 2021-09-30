@@ -27,8 +27,8 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: npm install
         run: npm ci
-      - name: bootstrap packages
-        run: npm run bootstrap
+      - name: prepare lerna packages
+        run: npm run prepare
       - name: build
         run: npm run build
       - name: lint
