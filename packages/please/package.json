@@ -25,6 +25,7 @@
     "test": "node ./bin/please test",
     "bootstrap": "npm run clean && tsc -p tsconfig.json --outDir cjs --noEmit false",
     "prepublishOnly": "npm run bootstrap && npm run build",
+    "init": "npm run prepublishOnly",
     "clean": "rm -rf cjs esm types"
   },
   "dependencies": {
