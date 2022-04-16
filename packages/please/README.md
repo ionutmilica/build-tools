@@ -27,24 +27,24 @@ In order to also support the editors your root project should contain:
 #### tsconfig.json
 ```json
 {
-  "extends": "@tal-tools/please/config/tsconfig.base.json",
+  "extends": "@ionutmilica/please/config/tsconfig.base.json",
   "include": ["src"],
   "exclude": [
     "node_modules",
     "**/*.test.ts",
     "**/*.spec.ts"
-  ],
+  ]
 }
 ```
 #### jest.config.js
 ```js
-module.exports = require('@tal-tools/please/config/jest.config.js');
+module.exports = require('@ionutmilica/please/config/jest.config.js');
 ```
 #### prettier.config.js
 ```js
-module.exports = require('@tal-tools/please/config/prettier.config.js');
+module.exports = require('@ionutmilica/please/config/prettier.config.js');
 ```
 #### .eslintrc
 ```js
-module.exports = require('@tal-tools/please/config/eslint.config.js');
+module.exports = require('@ionutmilica/please/config/eslint.config.js');
 ```
