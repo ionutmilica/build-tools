@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0](https://github.com/ionutmilica/build-tools/compare/@ionutmilica/please@0.1.1...@ionutmilica/please@0.2.0) (2022-06-12)
+
+
+* chore!: Updated dependencies ([fe0bdfe](https://github.com/ionutmilica/build-tools/commit/fe0bdfecdc7dfcbf1e7e32ac40952ca602b94b82))
+
+
+### BREAKING CHANGES
+
+* Upgrade to major versions for some packages which may cause breaking changes
+
+
+
+
+
 ## [0.1.1](https://github.com/ionutmilica/build-tools/compare/@ionutmilica/please@0.1.0...@ionutmilica/please@0.1.1) (2022-04-16)
 
 
