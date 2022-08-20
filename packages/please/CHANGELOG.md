@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.1](https://github.com/ionutmilica/build-tools/compare/@ionutmilica/please@0.2.0...@ionutmilica/please@0.2.1) (2022-08-20)
+
+**Note:** Version bump only for package @ionutmilica/please
+
+
+
+
+
 # [0.2.0](https://github.com/ionutmilica/build-tools/compare/@ionutmilica/please@0.1.1...@ionutmilica/please@0.2.0) (2022-06-12)
 
 
