@@ -7,13 +7,6 @@ module.exports = {
   coverageReporters: ['json', 'lcov', 'text', 'clover'],
   preset: 'ts-jest/presets/js-with-ts',
   transform: {
-    '^.+\\.tsx?$': 'ts-jest',
-  },
-  globals: {
-    'ts-jest': {
-      tsconfig: {
-        allowJs: true,
-      },
-    },
+    '^.+\\.tsx?$': ['ts-jest', { tsconfig: { allowJs: true } }],
   },
 };
