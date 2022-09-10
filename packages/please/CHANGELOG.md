@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.5](https://github.com/ionutmilica/build-tools/compare/@ionutmilica/please@0.2.4...@ionutmilica/please@0.2.5) (2022-09-10)
+
+
+### Bug Fixes
+
+* Moved ts-jest config outside of globals ([6079df4](https://github.com/ionutmilica/build-tools/commit/6079df43b7ed703481cd655c06ee664f3352434a))
+
+
+
+
+
 ## [0.2.4](https://github.com/ionutmilica/build-tools/compare/@ionutmilica/please@0.2.3...@ionutmilica/please@0.2.4) (2022-09-10)
 
 **Note:** Version bump only for package @ionutmilica/please
