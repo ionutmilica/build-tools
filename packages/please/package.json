@@ -1,6 +1,6 @@
 {
   "name": "@ionutmilica/please",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "CLI app used to run, test, build and lint node applications",
   "publishConfig": {
     "access": "public"
