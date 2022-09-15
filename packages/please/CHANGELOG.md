@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.7](https://github.com/ionutmilica/build-tools/compare/@ionutmilica/please@0.2.6...@ionutmilica/please@0.2.7) (2022-09-15)
+
+
+### Bug Fixes
+
+* Downgrade eslint until fix for webstorm issue ([51ff08c](https://github.com/ionutmilica/build-tools/commit/51ff08c59ee230614f3ebcb529ad2134871d8be4))
+
+
+
+
+
 ## [0.2.6](https://github.com/ionutmilica/build-tools/compare/@ionutmilica/please@0.2.5...@ionutmilica/please@0.2.6) (2022-09-13)
 
 **Note:** Version bump only for package @ionutmilica/please
