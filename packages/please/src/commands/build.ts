@@ -1,5 +1,6 @@
 import { CommandPayload, ExecutableCommand } from '../internal/command';
 import { handlerSpawnError, runCommands, RunMode } from '../internal/spawner';
+import { tscBin } from '../config';
 
 type BuildOpts = CommandPayload & {};
 
@@ -29,9 +30,8 @@ export async function buildCommand(cmd: BuildOpts): Promise<void> {
 }
 
 function esmCommand(job: BuildOpts): ExecutableCommand {
-  const cmd = 'npx';
+  const cmd = tscBin;
   const args = [
-    'tsc',
     '--allowJs',
     '--outDir',
     'esm',
@@ -49,8 +49,8 @@ function esmCommand(job: BuildOpts): ExecutableCommand {
 }
 
 function appCommand(job: BuildOpts): ExecutableCommand {
-  const cmd = 'npx';
-  const args = ['tsc', '--allowJs', '--outDir', 'build', '--noEmit', 'false', ...job.args];
+  const cmd = tscBin;
+  const args = ['--allowJs', '--outDir', 'build', '--noEmit', 'false', ...job.args];
   return {
     cmd,
     args,
@@ -59,8 +59,8 @@ function appCommand(job: BuildOpts): ExecutableCommand {
 }
 
 function cjsCommand(job: BuildOpts): ExecutableCommand {
-  const cmd = 'npx';
-  const args = ['tsc', '--allowJs', '--outDir', 'cjs', '--noEmit', 'false', ...job.args];
+  const cmd = tscBin;
+  const args = ['--allowJs', '--outDir', 'cjs', '--noEmit', 'false', ...job.args];
   return {
     cmd,
     args,
@@ -69,9 +69,8 @@ function cjsCommand(job: BuildOpts): ExecutableCommand {
 }
 
 function typesCommand(job: BuildOpts): ExecutableCommand {
-  const cmd = 'npx';
+  const cmd = tscBin;
   const args = [
-    'tsc',
     '--declaration',
     '--declarationMap',
     '--outDir',

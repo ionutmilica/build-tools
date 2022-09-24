@@ -6,7 +6,10 @@ export async function sequentially(commands: ExecutableCommand[]): Promise<void>
   let lastExitCode = 0;
   for (const command of commands) {
     const computedEnv = { ...process.env, ...(command.env || {}) };
-    const result = sync(command.cmd, command.args, { stdio: 'inherit', env: computedEnv });
+    const result = sync(command.cmd, command.args, {
+      stdio: 'inherit',
+      env: computedEnv,
+    });
     if (result.status === null) {
       lastExitCode = 1;
       break;

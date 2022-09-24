@@ -1,6 +1,14 @@
 import { CommandPayload, ExecutableCommand } from '../internal/command';
 import { runCommands, RunMode, handlerSpawnError } from '../internal/spawner';
-import { ConfigType, lookupConfigFile, packageSrcDir, packageWorkingDir } from '../config';
+import {
+  ConfigType,
+  lookupConfigFile,
+  packageSrcDir,
+  packageWorkingDir,
+  eslintBin,
+  prettierBin,
+  tscBin,
+} from '../config';
 
 type LintOpts = CommandPayload & {};
 
@@ -20,10 +28,8 @@ export async function lintCommand(cmd: LintOpts): Promise<void> {
 async function eslintCheckCommand(job: LintOpts): Promise<ExecutableCommand> {
   const config = await lookupConfigFile(ConfigType.Eslint);
 
-  const cmd = 'npx';
+  const cmd = eslintBin;
   const args = [
-    '--no-install',
-    'eslint',
     '--resolve-plugins-relative-to',
     packageWorkingDir,
     '--ext',
@@ -43,10 +49,8 @@ async function eslintCheckCommand(job: LintOpts): Promise<ExecutableCommand> {
 async function stylesCheckCommand(job: LintOpts): Promise<ExecutableCommand> {
   const prettierConfigPath = await lookupConfigFile(ConfigType.Prettier);
 
-  const cmd = 'npx';
+  const cmd = prettierBin;
   const args = [
-    '--no-install',
-    'prettier',
     '--config',
     prettierConfigPath,
     '--check',
@@ -62,8 +66,8 @@ async function stylesCheckCommand(job: LintOpts): Promise<ExecutableCommand> {
 }
 
 async function typesCheckCommand(job: LintOpts): Promise<ExecutableCommand> {
-  const cmd = 'npx';
-  const args = ['tsc', '--noEmit', 'true', '--incremental', 'false', ...job.args];
+  const cmd = tscBin;
+  const args = ['--noEmit', 'true', '--incremental', 'false', ...job.args];
   return {
     cmd,
     args,

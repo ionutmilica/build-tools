@@ -1,4 +1,4 @@
-import { packageWorkingDir, lookupConfigFile, ConfigType } from '../config';
+import { packageWorkingDir, lookupConfigFile, ConfigType, jestBin } from '../config';
 import { CommandPayload, ExecutableCommand, isInCiMode } from '../internal/command';
 import { runCommands, RunMode, handlerSpawnError } from '../internal/spawner';
 
@@ -19,10 +19,8 @@ async function jestCommand(cfg: TestOpts): Promise<ExecutableCommand> {
   const path = `${packageWorkingDir}`;
   const inCiMode = isInCiMode(cfg);
 
-  const cmd = 'npx';
+  const cmd = jestBin;
   const args = [
-    '--no-install',
-    'jest',
     '--rootDir',
     path,
     '--passWithNoTests',
