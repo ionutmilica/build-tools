@@ -48,3 +48,14 @@ module.exports = require('@ionutmilica/please/config/prettier.config.js');
 ```js
 module.exports = require('@ionutmilica/please/config/eslint.config.js');
 ```
+
+### Overwriting config
+Config files are loaded by priority (config from working dir, config bundled in package). This means that for example if
+we have a **prettier.config.js** in the project root we can overwrite the default configs bundled in the package.
+```js
+const baseConfig = require('@ionutmilica/please/config/prettier.config.js');
+module.exports = {
+  ...baseConfig,
+  tabWidth: 4,
+};
+```

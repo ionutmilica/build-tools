@@ -1,14 +1,14 @@
 import { CommandPayload, ExecutableCommand } from '../internal/command';
 import { runCommands, RunMode, handlerSpawnError } from '../internal/spawner';
-import { eslintConfigPath, packageSrcDir, packageWorkingDir, prettierConfigPath } from '../config';
+import { ConfigType, lookupConfigFile, packageSrcDir, packageWorkingDir } from '../config';
 
 type LintOpts = CommandPayload & {};
 
 export async function lintCommand(cmd: LintOpts): Promise<void> {
-  const commands = [eslintCheckCommand(cmd)];
+  const commands = [await eslintCheckCommand(cmd)];
 
-  commands.push(stylesCheckCommand(cmd));
-  commands.push(typesCheckCommand(cmd));
+  commands.push(await stylesCheckCommand(cmd));
+  commands.push(await typesCheckCommand(cmd));
 
   try {
     await runCommands(commands, RunMode.Synchronous);
@@ -17,8 +17,8 @@ export async function lintCommand(cmd: LintOpts): Promise<void> {
   }
 }
 
-function eslintCheckCommand(job: LintOpts): ExecutableCommand {
-  const config = eslintConfigPath;
+async function eslintCheckCommand(job: LintOpts): Promise<ExecutableCommand> {
+  const config = await lookupConfigFile(ConfigType.Eslint);
 
   const cmd = 'npx';
   const args = [
@@ -40,7 +40,9 @@ function eslintCheckCommand(job: LintOpts): ExecutableCommand {
   };
 }
 
-function stylesCheckCommand(job: LintOpts): ExecutableCommand {
+async function stylesCheckCommand(job: LintOpts): Promise<ExecutableCommand> {
+  const prettierConfigPath = await lookupConfigFile(ConfigType.Prettier);
+
   const cmd = 'npx';
   const args = [
     '--no-install',
@@ -59,7 +61,7 @@ function stylesCheckCommand(job: LintOpts): ExecutableCommand {
   };
 }
 
-function typesCheckCommand(job: LintOpts): ExecutableCommand {
+async function typesCheckCommand(job: LintOpts): Promise<ExecutableCommand> {
   const cmd = 'npx';
   const args = ['tsc', '--noEmit', 'true', '--incremental', 'false', ...job.args];
   return {

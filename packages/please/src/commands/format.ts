@@ -1,6 +1,6 @@
 import spawn from 'cross-spawn';
 import { SpawnSyncReturns } from 'child_process';
-import { packageSrcDir, prettierConfigPath } from '../config';
+import { ConfigType, lookupConfigFile, packageSrcDir } from '../config';
 
 interface FormatOpts {
   name: string;
@@ -10,12 +10,12 @@ interface FormatOpts {
 
 export async function formatCommand(cfg: FormatOpts): Promise<SpawnSyncReturns<Buffer>> {
   const cmd = 'npx';
-  const config = prettierConfigPath;
+  const configPath = await lookupConfigFile(ConfigType.Prettier);
 
   const args = [
     '--no-install',
     'prettier',
-    ...(config ? ['--config', config] : []),
+    ...(configPath ? ['--config', configPath] : []),
     '--write',
     `${packageSrcDir}/**/*.{ts,tsx,js,jsx}`,
     ...cfg.args,
