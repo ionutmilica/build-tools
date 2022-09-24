@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/ionutmilica/build-tools/compare/@ionutmilica/please@0.2.7...@ionutmilica/please@0.3.0) (2022-09-24)
+
+
+### Features
+
+* Enable config overwriting by loading configs by priority ([4276788](https://github.com/ionutmilica/build-tools/commit/42767889afa662116f9af9f72d422d5113e59bef))
+
+
+
+
+
 ## [0.2.7](https://github.com/ionutmilica/build-tools/compare/@ionutmilica/please@0.2.6...@ionutmilica/please@0.2.7) (2022-09-15)
 
 
