@@ -1,6 +1,6 @@
 import spawn from 'cross-spawn';
 import { SpawnSyncReturns } from 'child_process';
-import { ConfigType, lookupConfigFile, packageSrcDir, prettierBin } from '../config';
+import { ConfigType, lookupConfigFile, projectSrcDir, prettierBin } from '../config';
 
 interface FormatOpts {
   name: string;
@@ -14,7 +14,7 @@ export async function formatCommand(cfg: FormatOpts): Promise<SpawnSyncReturns<B
   const args = [
     ...(configPath ? ['--config', configPath] : []),
     '--write',
-    `${packageSrcDir}/**/*.{ts,tsx,js,jsx}`,
+    `${projectSrcDir}/**/*.{ts,tsx,js,jsx}`,
     ...cfg.args,
   ];
   return spawn.sync(cmd, args, { stdio: 'inherit' });

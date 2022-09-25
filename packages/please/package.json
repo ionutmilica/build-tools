@@ -15,6 +15,7 @@
   "author": "Ionut Milica <ionut.milica@gmail.com>",
   "homepage": "https://github.com/ionutmilica/build-tools#readme",
   "license": "MIT",
+  "keywords": ["build tools", "package build", "no config", "react package build", "zero config"],
   "main": "cjs/index.js",
   "module": "esm/index.js",
   "types": "types",

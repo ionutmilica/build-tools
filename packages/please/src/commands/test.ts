@@ -1,4 +1,4 @@
-import { packageWorkingDir, lookupConfigFile, ConfigType, jestBin } from '../config';
+import { projectWorkingDir, lookupConfigFile, ConfigType, jestBin } from '../config';
 import { CommandPayload, ExecutableCommand, isInCiMode } from '../internal/command';
 import { runCommands, RunMode, handlerSpawnError } from '../internal/spawner';
 
@@ -16,7 +16,7 @@ export async function testCommand(cfg: TestOpts): Promise<void> {
 
 async function jestCommand(cfg: TestOpts): Promise<ExecutableCommand> {
   const config = await lookupConfigFile(ConfigType.Jest);
-  const path = `${packageWorkingDir}`;
+  const path = `${projectWorkingDir}`;
   const inCiMode = isInCiMode(cfg);
 
   const cmd = jestBin;

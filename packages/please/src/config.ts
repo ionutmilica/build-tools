@@ -4,15 +4,16 @@ import { access, constants } from 'fs';
 
 const accessAsync = promisify(access);
 
-export const packageWorkingDir = resolve(process.cwd());
-export const packageSrcDir = join(packageWorkingDir, 'src');
-export const packageBinDir = join(packageWorkingDir, 'node_modules', '.bin');
-export const packageRootDir = join(__dirname, '..');
-export const configDir = join(packageRootDir, 'config');
+export const projectWorkingDir = resolve(process.cwd());
+export const projectSrcDir = join(projectWorkingDir, 'src');
 
-export const prettierConfigPath = join(configDir, 'prettier.config.js');
-export const eslintConfigPath = join(configDir, 'eslint.config.js');
-export const jestConfigPath = join(configDir, 'jest.config.js');
+export const packageRootDir = join(__dirname, '..');
+export const packageBinDir = join(packageRootDir, 'node_modules', '.bin');
+export const packageConfigDir = join(packageRootDir, 'config');
+
+export const prettierConfigPath = join(packageConfigDir, 'prettier.config.js');
+export const eslintConfigPath = join(packageConfigDir, 'eslint.config.js');
+export const jestConfigPath = join(packageConfigDir, 'jest.config.js');
 
 export const tscBin = join(packageBinDir, 'tsc');
 export const prettierBin = join(packageBinDir, 'prettier');
@@ -31,10 +32,10 @@ export enum ConfigType {
  * Defines config types and their loading priority
  */
 const configsMap: { [key in ConfigType]: string[] } = {
-  jest: [join(packageWorkingDir, 'jest.config.js'), jestConfigPath],
-  eslint: [join(packageWorkingDir, '.eslintrc.js'), eslintConfigPath],
-  prettier: [join(packageWorkingDir, 'prettier.config.js'), prettierConfigPath],
-  typescript: [join(configDir, 'tsconfig.json')],
+  jest: [join(projectWorkingDir, 'jest.config.js'), jestConfigPath],
+  eslint: [join(projectWorkingDir, '.eslintrc.js'), eslintConfigPath],
+  prettier: [join(projectWorkingDir, 'prettier.config.js'), prettierConfigPath],
+  typescript: [join(projectWorkingDir, 'tsconfig.json')],
 };
 
 export async function lookupConfigFile(configType: ConfigType): Promise<string> {

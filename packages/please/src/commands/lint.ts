@@ -3,8 +3,8 @@ import { runCommands, RunMode, handlerSpawnError } from '../internal/spawner';
 import {
   ConfigType,
   lookupConfigFile,
-  packageSrcDir,
-  packageWorkingDir,
+  projectSrcDir,
+  projectWorkingDir,
   eslintBin,
   prettierBin,
   tscBin,
@@ -31,10 +31,10 @@ async function eslintCheckCommand(job: LintOpts): Promise<ExecutableCommand> {
   const cmd = eslintBin;
   const args = [
     '--resolve-plugins-relative-to',
-    packageWorkingDir,
+    projectWorkingDir,
     '--ext',
     'js,ts,jsx,tsx',
-    packageSrcDir,
+    projectSrcDir,
     ...(config ? ['--config', config] : []),
     ...job.args,
   ];
@@ -54,7 +54,7 @@ async function stylesCheckCommand(job: LintOpts): Promise<ExecutableCommand> {
     '--config',
     prettierConfigPath,
     '--check',
-    `${packageSrcDir}/**/*.{ts,tsx,js,jsx}`,
+    `${projectSrcDir}/**/*.{ts,tsx,js,jsx}`,
     ...job.args,
   ];
 
