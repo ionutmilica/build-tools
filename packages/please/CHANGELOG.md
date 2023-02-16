@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.6.0](https://github.com/ionutmilica/build-tools/compare/@ionutmilica/please@0.5.0...@ionutmilica/please@0.6.0) (2023-02-16)
+
+
+* chore!: Updated dependencies & fix for tools bin ([43ca6f8](https://github.com/ionutmilica/build-tools/commit/43ca6f855cf406c84285a80001fb04c77eab5707))
+
+
+### BREAKING CHANGES
+
+* Contain updates to major versions
+
+
+
+
+
 # [0.5.0](https://github.com/ionutmilica/build-tools/compare/@ionutmilica/please@0.4.0...@ionutmilica/please@0.5.0) (2022-12-25)
 
 
