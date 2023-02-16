@@ -6,20 +6,20 @@ const accessAsync = promisify(access);
 
 export const projectWorkingDir = resolve(process.cwd());
 export const projectSrcDir = join(projectWorkingDir, 'src');
+export const projectBinDir = join(projectWorkingDir, 'node_modules', '.bin');
 
 export const packageRootDir = join(__dirname, '..');
-export const packageBinDir = join(packageRootDir, 'node_modules', '.bin');
 export const packageConfigDir = join(packageRootDir, 'config');
 
 export const prettierConfigPath = join(packageConfigDir, 'prettier.config.js');
 export const eslintConfigPath = join(packageConfigDir, 'eslint.config.js');
 export const jestConfigPath = join(packageConfigDir, 'jest.config.js');
 
-export const tscBin = join(packageBinDir, 'tsc');
-export const prettierBin = join(packageBinDir, 'prettier');
-export const eslintBin = join(packageBinDir, 'eslint');
-export const jestBin = join(packageBinDir, 'jest');
-export const tsNodeBin = join(packageBinDir, 'ts-node-dev');
+export const tscBin = join(projectBinDir, 'tsc');
+export const prettierBin = join(projectBinDir, 'prettier');
+export const eslintBin = join(projectBinDir, 'eslint');
+export const jestBin = join(projectBinDir, 'jest');
+export const tsNodeBin = join(projectBinDir, 'ts-node-dev');
 
 export enum ConfigType {
   Jest = 'jest',
