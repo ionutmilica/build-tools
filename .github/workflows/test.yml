@@ -31,7 +31,6 @@ jobs:
       - name: Bootstrap lerna
         run: |
           npm ci
-          npx lerna bootstrap
 
       - name: Init packages
         run: npx lerna exec npm run init
