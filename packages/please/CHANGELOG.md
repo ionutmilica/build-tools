@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.7.0](https://github.com/ionutmilica/build-tools/compare/@ionutmilica/please@0.6.1...@ionutmilica/please@0.7.0) (2023-09-03)
+
+
+### Features
+
+* **please:** Updated please dependencies to latest ([2cc98b0](https://github.com/ionutmilica/build-tools/commit/2cc98b042ec4dd8cdb7f741a75987ba7313868be))
+
+
+
+
+
 ## [0.6.1](https://github.com/ionutmilica/build-tools/compare/@ionutmilica/please@0.6.0...@ionutmilica/please@0.6.1) (2023-02-16)
 
 **Note:** Version bump only for package @ionutmilica/please
