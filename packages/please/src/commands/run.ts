@@ -9,7 +9,7 @@ interface RunOpts {
 }
 
 export async function runCommand(cfg: RunOpts): Promise<SpawnSyncReturns<Buffer>> {
-  const cmd = tsNodeBin;
-  const args = ['--respawn', '--transpile-only', ...cfg.args];
+  const cmd = 'npx';
+  const args = [tsNodeBin, '--respawn', '--transpile-only', ...cfg.args];
   return spawn.sync(cmd, args, { stdio: 'inherit' });
 }

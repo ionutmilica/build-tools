@@ -58,6 +58,8 @@ module.exports = {
     yoda: ERROR,
     'no-array-constructor': OFF,
     'default-param-last': WARN,
+    '@typescript-eslint/no-explicit-any': WARN,
+    '@typescript-eslint/no-unused-vars': WARN,
     '@typescript-eslint/no-shadow': ERROR,
     '@typescript-eslint/no-array-constructor': ERROR,
     '@typescript-eslint/no-use-before-define': [ERROR, 'nofunc'],

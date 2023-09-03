@@ -30,8 +30,9 @@ export async function buildCommand(cmd: BuildOpts): Promise<void> {
 }
 
 function esmCommand(job: BuildOpts): ExecutableCommand {
-  const cmd = tscBin;
+  const cmd = 'npx';
   const args = [
+    tscBin,
     '--allowJs',
     '--outDir',
     'esm',
@@ -49,8 +50,8 @@ function esmCommand(job: BuildOpts): ExecutableCommand {
 }
 
 function appCommand(job: BuildOpts): ExecutableCommand {
-  const cmd = tscBin;
-  const args = ['--allowJs', '--outDir', 'build', '--noEmit', 'false', ...job.args];
+  const cmd = 'npx';
+  const args = [tscBin, '--allowJs', '--outDir', 'build', '--noEmit', 'false', ...job.args];
   return {
     cmd,
     args,
@@ -59,8 +60,8 @@ function appCommand(job: BuildOpts): ExecutableCommand {
 }
 
 function cjsCommand(job: BuildOpts): ExecutableCommand {
-  const cmd = tscBin;
-  const args = ['--allowJs', '--outDir', 'cjs', '--noEmit', 'false', ...job.args];
+  const cmd = 'npx';
+  const args = [tscBin, '--allowJs', '--outDir', 'cjs', '--noEmit', 'false', ...job.args];
   return {
     cmd,
     args,
@@ -69,8 +70,9 @@ function cjsCommand(job: BuildOpts): ExecutableCommand {
 }
 
 function typesCommand(job: BuildOpts): ExecutableCommand {
-  const cmd = tscBin;
+  const cmd = 'npx';
   const args = [
+    tscBin,
     '--declaration',
     '--declarationMap',
     '--outDir',

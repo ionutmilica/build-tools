@@ -19,13 +19,12 @@ export async function runCommands(commands: ExecutableCommand[], mode: RunMode):
 }
 
 export function handlerSpawnError(err: Error & { exitStatus?: number }): void {
-  if (!err.exitStatus || !Number.isInteger(err.exitStatus)) {
-    console.error('Failed to run the command');
-    process.exit(1);
-  }
-
   if (err.message && err.message.indexOf('Exited with status') < 0) {
     console.error(err);
+  }
+
+  if (!err.exitStatus || !Number.isInteger(err.exitStatus)) {
+    return process.exit(1);
   }
 
   process.exit(err.exitStatus);
