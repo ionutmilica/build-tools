@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.9.0](https://github.com/ionutmilica/build-tools/compare/@plsx/cli@0.8.0...@plsx/cli@0.9.0) (2024-02-23)
+
+
+### Features
+
+* Upgraded dependencies and bump to node v20 ([aa05b68](https://github.com/ionutmilica/build-tools/commit/aa05b6817a035a96961b845e65f470879f9abaca))
+
+
+
+
+
 # 0.8.0 (2024-02-23)
 
 

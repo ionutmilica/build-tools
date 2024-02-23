@@ -1,6 +1,6 @@
 {
   "name": "@plsx/cli",
-  "version": "0.8.0",
+  "version": "0.9.0",
   "description": "CLI app used to run, test, build and lint node applications",
   "publishConfig": {
     "access": "public"
