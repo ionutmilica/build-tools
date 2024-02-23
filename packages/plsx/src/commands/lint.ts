@@ -13,7 +13,7 @@ import {
 
 type LintOpts = CommandPayload & {};
 
-const dbg = debug('please lint');
+const dbg = debug('plsx lint');
 
 export async function lintCommand(cmd: LintOpts): Promise<void> {
   const commands = [await eslintCheckCommand(cmd)];

@@ -5,7 +5,7 @@ import { runCommands, RunMode, handlerSpawnError } from '../internal/spawner';
 
 type TestOpts = CommandPayload & {};
 
-const dbg = debug('please test');
+const dbg = debug('plsx test');
 
 export async function testCommand(cfg: TestOpts): Promise<void> {
   const commands = [await jestCommand(cfg)];
