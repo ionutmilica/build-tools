@@ -18,7 +18,7 @@ export const tscBin = 'tsc';
 export const prettierBin = 'prettier';
 export const eslintBin = 'eslint';
 export const jestBin = 'jest';
-export const tsNodeBin = 'ts-node-dev';
+export const tsNodeBin = 'tsx';
 
 export enum ConfigType {
   Jest = 'jest',
