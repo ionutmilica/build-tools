@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.8.0 (2024-02-23)
+
+
+### Features
+
+* Renamed npm package & Upgraded dependencies ([4b6a46d](https://github.com/ionutmilica/build-tools/commit/4b6a46d357254a179a798c13331e7a45050f64c8))
+
+
+
+
+
 # [0.7.0](https://github.com/ionutmilica/build-tools/compare/@ionutmilica/please@0.6.1...@ionutmilica/please@0.7.0) (2023-09-03)
 
 
