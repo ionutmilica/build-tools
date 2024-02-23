@@ -1,5 +1,5 @@
 {
-  "name": "@ionutmilica/please",
+  "name": "@plsx/cli",
   "version": "0.7.0",
   "description": "CLI app used to run, test, build and lint node applications",
   "publishConfig": {
