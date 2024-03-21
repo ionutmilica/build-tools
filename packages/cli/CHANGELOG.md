@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.10.0](https://github.com/ionutmilica/build-tools/compare/@plsx/cli@0.9.1...@plsx/cli@0.10.0) (2024-03-21)
+
+
+### Features
+
+* Bump dependencies versions to latest ([33ad07a](https://github.com/ionutmilica/build-tools/commit/33ad07a242efc38b1e5b7867c786dec1fc2e1ce0))
+
+
+
+
+
 ## [0.9.1](https://github.com/ionutmilica/build-tools/compare/@plsx/cli@0.9.0...@plsx/cli@0.9.1) (2024-02-23)
 
 
